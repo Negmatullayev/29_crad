@@ -18,4 +18,8 @@ const adminUpdateSchema = Joi.object({
   hashed_refresh_token: Joi.string().allow(null, ""),
 }).min(1);
 
+const validateAdmin = (admin) => adminSchema.validate(admin);
+
+const validateAdminUpdate = (admin) => adminUpdateSchema.validate(admin);
+
 module.exports = { validateAdmin, validateAdminUpdate };
